@@ -1,0 +1,7 @@
+{
+  "type":"module",
+  "dependencies": {
+    "acorn": "^8.14.0",
+    "esprima": "^4.0.1"
+  }
+}
