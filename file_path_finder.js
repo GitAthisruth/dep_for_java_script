@@ -1,9 +1,8 @@
 import fs from "fs";
 import path from "path";
 
-const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test";
 
-function dependencyCheck(folderPath) {
+export function file_path_finder(folderPath) {
     let allFilePaths = [];
 
     function traverseDirectory(dir) {
@@ -13,9 +12,8 @@ function dependencyCheck(folderPath) {
             const filePath = path.join(dir, file.name);
 
             if (file.isDirectory()) {
-                traverseDirectory(filePath); // Recursively search subdirectories
+                traverseDirectory(filePath); 
             } else if (file.name.endsWith(".js")) {
-                console.log(`File: ${file.name} | Path: ${filePath}`);
                 allFilePaths.push(filePath);
             }
         });
@@ -26,9 +24,11 @@ function dependencyCheck(folderPath) {
     const filePathListJson = JSON.stringify({ file_path: allFilePaths }, null, 4);
 
     fs.writeFileSync("all_file_paths.json", filePathListJson, "utf-8");
-
     return filePathListJson;
 }
 
-console.log(dependencyCheck(folderPath));
+// console.log(dependencyCheck(folderPath));
+
+
+
 

@@ -1,22 +1,17 @@
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import { basename } from "path";
 import { parseModule } from "esprima";
+import {file_path_finder} from "./file_path_finder.js";
 
 
-
-export function test_java(rawData) {
+export function finding_getimports(rawData) {
     const jsonData = JSON.parse(rawData);
-    console.log("jsonData",jsonData)
     let fileImports = [];
 
     jsonData.file_path.forEach(filePath => {
-        console.log(`Processing File: ${filePath}`);
-
         try {
             const fileContent = readFileSync(filePath, "utf-8");
-            console.log("File Content:", fileContent);
             const fileName = basename(filePath,".js");
-            console.log("File Name:", fileName);
             const ast = parseModule(fileContent, { sourceType: "module" });
             let imports = ast.body
                 .filter(node => node.type === "ImportDeclaration")
@@ -27,6 +22,10 @@ export function test_java(rawData) {
                     }
                     if (importName.endsWith(".js")) {
                         importName = importName.slice(0, -3);
+                    }
+
+                    if (importName.includes("/")) {
+                        importName = importName.split("/").pop();
                     }
 
                     return importName;
@@ -46,10 +45,3 @@ export function test_java(rawData) {
     return fileImports;
 }
 
-const filePath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\all_file_paths.json";
-
-const rawData = readFileSync(filePath, "utf-8");
-
-console.log(rawData)
-
-console.log(test_java(rawData));
