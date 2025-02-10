@@ -1,7 +1,8 @@
 {
-  "type":"module",
+  "type": "module",
   "dependencies": {
     "acorn": "^8.14.0",
-    "esprima": "^4.0.1"
+    "esprima": "^4.0.1",
+    "prompt-sync": "^4.2.0"
   }
 }
