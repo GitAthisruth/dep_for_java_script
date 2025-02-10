@@ -4,8 +4,6 @@ import {finding_getimports} from "./finding_getimports.js"
 
 
 function depSearch(fileToCheck, importData, visited = new Set(), tupledDependencies = new Set()) {
-    console.log("importData", importData);
-
     visited.add(fileToCheck);
     let dependencies = new Set();
 
