@@ -60,7 +60,7 @@ def dep_search(file_to_check, files_inform,visited=None,tupled_dependencies=None
         tupled_dependencies = []
     visited.add(file_to_check)
     for file_info in files_inform:
-        file_to_check = file_to_check.replace(".py","")
+        file_to_check = file_to_check.replace(".js","")
         if file_to_check in file_info['imp']:
             dependencies.add(file_info['file_name'])  # Direct dependency
     result = [(file_to_check, item) for item in dependencies]#creating a list of tuple
@@ -82,7 +82,6 @@ def get_all_file_infos(folder_path, file_to_check):
         file_inform = []
         all_files = []
         imp_list = []
-        # extensions = '.js'
 
         if file_to_check.endswith(".js"):
             file_to_check = os.path.splitext(file_to_check)[0]#convert file without extension
