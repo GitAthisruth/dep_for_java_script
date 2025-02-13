@@ -1,9 +1,7 @@
-import { readFileSync, writeFileSync } from "fs";
+import {readFileSync,writeFileSync } from "fs";
 import { basename } from "path";
 // import { parseModule } from "esprima";
 import { parseModule, parseScript } from "meriyah";
-
-
 
 export function finding_getimports(rawData) {
     const jsonData = JSON.parse(rawData);
@@ -21,9 +19,7 @@ export function finding_getimports(rawData) {
                 ast = parseScript(fileContent, { sourceType: "script" });
             }
             let imports = ast.body.filter(node => node.type === "ImportDeclaration").map(node => cleanImportName(node.source.value));
-            console.log("imports:",imports)
             let requires = ast.body.filter(node => node.type === "VariableDeclaration" && node.declarations.some(decl =>decl.init && decl.init.type === "CallExpression" && decl.init.callee.name === "require")).map(node => cleanImportName(node.declarations[0].init.arguments[0].value));
-            console.log("requires:",requires)
             fileImports.push({
                 file: fileName,
                 imports: [...imports, ...requires] 
@@ -33,6 +29,14 @@ export function finding_getimports(rawData) {
             console.error(`Error processing file ${filePath}:`, error);
         }
     });
+
+    const jsonDataw = JSON.stringify(fileImports, null, 2); 
+const filePath = "fileImports.json";  
+try {
+    writeFileSync(filePath, jsonDataw, "utf8");
+} catch (error) {
+    console.error("Error saving JSON file:", error);
+}
 
     return fileImports;
 }
