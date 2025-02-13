@@ -3,6 +3,7 @@
   "dependencies": {
     "acorn": "^8.14.0",
     "esprima": "^4.0.1",
+    "meriyah": "^6.0.5",
     "prompt-sync": "^4.2.0"
   }
 }

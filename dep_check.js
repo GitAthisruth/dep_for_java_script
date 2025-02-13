@@ -44,11 +44,12 @@ const importData = finding_getimports(rawData);
 const fileToCheck = prompt("Enter the file name to check dependencies: ");
 
 
-if (fileToCheck) {
-    let [dependencies, tupledDependencies] = depSearch(fileToCheck,importData);
-    
+if (typeof fileToCheck === "string" && fileToCheck.trim() !== "") {
+    console.log("fileToCheck:", fileToCheck);
+    let [dependencies, tupledDependencies] = depSearch(fileToCheck, importData);
+
     console.log("Dependencies (List of Files):", dependencies);
     console.log("Tupled Dependencies (List of Tuples):", tupledDependencies);
 } else {
-    console.log("Invalid file name.");
+    console.error("Invalid file name provided:", fileToCheck);
 }
