@@ -22,7 +22,7 @@ function depSearch(fileToCheck, importData, visited = new Set(), tupledDependenc
     for (let impFile of dependencies) {
         if (!visited.has(impFile)) {
             let [newDep, newTuple] = depSearch(impFile, importData, visited, tupledDependencies);
-            dependencies = new Set([...dependencies, ...newDep]); 
+            newDep.forEach(dep => dependencies.add(dep));
         }
     }
     const dependenciesArray = Array.from(dependencies);
@@ -40,7 +40,7 @@ writeFileSync(`${fileToCheck}_dependencies.json`, jsonData, "utf-8");
 
 
 
-// const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test";
+
 
 const folderPath = "C:\\Users\\LENOVO\\Desktop\\js_repo_check\\tfjs"
 

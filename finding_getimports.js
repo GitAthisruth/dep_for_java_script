@@ -6,11 +6,13 @@ import { parseModule, parseScript } from "meriyah";
 export function finding_getimports(rawData) {
     const jsonData = JSON.parse(rawData);
     let fileImports = [];
+    let all_files = []
 
-    jsonData.file_path.forEach(filePath => {
+    jsonData.file_path.filter(filePath => filePath.endsWith(".js")).forEach(filePath => {
         try {
             const fileContent = readFileSync(filePath, "utf-8");
             const fileName = basename(filePath,".js");
+            all_files.push(fileName)
             let ast;
             try {
                 ast = parseModule(fileContent, { sourceType: "module" });
