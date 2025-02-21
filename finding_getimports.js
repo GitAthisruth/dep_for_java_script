@@ -1,6 +1,5 @@
 import {readFileSync,writeFileSync } from "fs";
 import { basename } from "path";
-// import { parseModule } from "esprima";
 import { parseModule, parseScript } from "meriyah";
 
 export function finding_getimports(rawData) {

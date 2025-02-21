@@ -42,7 +42,7 @@ writeFileSync(`${fileToCheck}_dependencies.json`, jsonData, "utf-8");
 
 
 
-const folderPath = "C:\\Users\\LENOVO\\Desktop\\js_repo_check\\tfjs"
+const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js"
 
 const rawData = file_path_finder(folderPath)
 
