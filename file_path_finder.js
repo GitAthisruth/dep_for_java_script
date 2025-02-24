@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js"
+const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test"
 
 
 export function file_path_finder(folderPath) {
@@ -30,7 +30,7 @@ export function file_path_finder(folderPath) {
     return filePathListJson;
 }
 
-console.log(file_path_finder(folderPath));
+// console.log(file_path_finder(folderPath));
 
 
 

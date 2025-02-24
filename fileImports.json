@@ -1,0 +1,39 @@
+[
+  {
+    "file": "script1",
+    "imports": [
+      "fs",
+      "path",
+      "esprima"
+    ]
+  },
+  {
+    "file": "script2",
+    "imports": [
+      "express",
+      "express",
+      "lodash",
+      "script3"
+    ]
+  },
+  {
+    "file": "script3",
+    "imports": [
+      "utils",
+      "helpers"
+    ]
+  },
+  {
+    "file": "script4",
+    "imports": [
+      "fs",
+      "path",
+      "esprima",
+      "script2"
+    ]
+  },
+  {
+    "file": "utils",
+    "imports": []
+  }
+]

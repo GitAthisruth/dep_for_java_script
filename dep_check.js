@@ -5,28 +5,24 @@ import {writeFileSync } from "fs";
 
 const prompt = promptSync();
 
-function depSearch(fileToCheck, importData,rawData,visited = new Set(), tupledDependencies = new Set()) {
-    console.log("importData",importData)
-    visited.add(fileToCheck);
-    let dependencies = new Set();
-
-
-    importData.forEach(fileInfo => {
-        if (fileInfo.imports.includes(fileToCheck)) {
-            dependencies.add(fileInfo.file);
-        }
-    });
-    let result = Array.from(dependencies).map(item => [fileToCheck, item]);
-    result.forEach(dep => tupledDependencies.add(dep));
-
-
-    for (let impFile of dependencies) {
-        if (!visited.has(impFile)) {
-            let [newDep, newTuple] = depSearch(impFile, importData, visited, tupledDependencies);
-            newDep.forEach(dep => dependencies.add(dep));
-        }
+function depSearch(file_to_check,files_inform,visited) {
+    if (visited === undefined || visited === null) {
+    visited = new Set();
     }
-    const dependenciesArray = Array.from(dependencies);
+    visited.add(file_to_check)
+    files_inform.forEach(file_info => {
+        file_to_check = file_to_check.replace(/\.py$/, "");
+    if (file_info.imports.includes(file_to_check)) {
+        dependencies.add(file_info.file);
+    }
+    dependencies.forEach(imp_file=> {
+        if (!visited.has(imp_file)){
+            const new_dependencies = ff(imp_file, files_inform, visited);
+            new_dependencies.forEach(dep => dependencies.add(dep));
+        }
+    })
+});
+const dependenciesArray = Array.from(dependencies);
 
 const jsonData = JSON.stringify(
     { file_to_check:fileToCheck, dependencies: dependenciesArray },
@@ -36,7 +32,7 @@ const jsonData = JSON.stringify(
 
 writeFileSync(`${fileToCheck}_dependencies.json`, jsonData, "utf-8");
 
-    return [Array.from(dependencies), Array.from(tupledDependencies)];
+    return jsonData;
 }
 
 
@@ -48,13 +44,13 @@ const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test
 const rawData = file_path_finder(folderPath)
 
 const importData = finding_getimports(rawData);  
+
 const fileToCheck = prompt("Enter the file name to check dependencies: ");
 
 
 if (typeof fileToCheck === "string") {
-    let [dependencies, tupledDependencies] = depSearch(fileToCheck, importData,rawData);
+    let dependencies= depSearch(fileToCheck, importData,rawData);
     console.log("Dependencies (List of Files):", dependencies);
-    console.log("Tupled Dependencies (List of Tuples):", tupledDependencies);
 } else {
     console.error("Invalid file name provided:", fileToCheck);
 }
