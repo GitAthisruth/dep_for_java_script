@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 
+const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js"
+
 
 export function file_path_finder(folderPath) {
     let allFilePaths = [];
@@ -14,7 +16,8 @@ export function file_path_finder(folderPath) {
             if (file.isDirectory()) {
                 traverseDirectory(filePath); 
             } else if (file.name.endsWith(".js")) {
-                allFilePaths.push(filePath);
+                const fileName = file.name.replace(/\.js$/, "");
+                allFilePaths.push({"file":fileName,"filePath":filePath});
             }
         });
     }
@@ -27,7 +30,7 @@ export function file_path_finder(folderPath) {
     return filePathListJson;
 }
 
-// console.log(dependencyCheck(folderPath));
+console.log(file_path_finder(folderPath));
 
 
 

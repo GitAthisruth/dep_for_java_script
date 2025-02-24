@@ -1,9 +1,140 @@
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from "fs";
+import { basename } from "path";
+import { parseModule, parseScript } from "meriyah"; 
+
+export function finding_getimports(rawData) {
+    const jsonData = typeof rawData === 'string' ? JSON.parse(rawData) : rawData;
+    console.log(`jsonData: ${jsonData}`)
+    let fileImports = [];
+    let all_files = [];
+
+    jsonData.file_path.forEach(file_names => {
+        if (file_names && file_names.filePath && file_names.filePath.endsWith(".js")) {
+            const fileContent = readFileSync(file_names.filePath, "utf-8");
+            console.log("file.filePath:", file_names.filePath);
+
+            const fileName = basename(file_names.file, ".js");
+            all_files.push(fileName);
+
+   
+            let ast;
+            try {
+                ast = parseModule(fileContent, { sourceType: "module" });
+            } catch (moduleError) {
+                console.warn(`Module parsing failed for ${file_names.filePath}, trying script mode.`);
+                ast = parseScript(fileContent, { sourceType: "script" });
+            }
+
+           
+            let imports = ast.body
+                .filter(node => node.type === "ImportDeclaration")
+                .map(node => cleanImportName(node.source.value));
+
+            let requires = ast.body
+                .filter(node => node.type === "VariableDeclaration" && 
+                    node.declarations.some(decl =>
+                        decl.init && 
+                        decl.init.type === "CallExpression" &&
+                        decl.init.callee.name === "require"
+                    )
+                )
+                .map(node => cleanImportName(node.declarations[0].init.arguments[0].value));
+
+          
+            fileImports.push({
+                file: file_names.file,
+                imports: [...imports, ...requires] 
+            });
+        }
+    });
+
+  
+    const outputFilePath = "fileImports.json";  
+    const jsonDataw = JSON.stringify(fileImports, null, 2); 
+    try {
+        writeFileSync(outputFilePath, jsonDataw, "utf8");
+        console.log("File imports saved successfully to fileImports.json");
+    } catch (error) {
+        console.error("Error saving JSON file:", error);
+    }
+
+    return fileImports;
+}
 
 
-const rawData = readFileSync('all_file_paths.json', 'utf-8');
+function cleanImportName(importName) {
+    if (!importName) return null;
 
-const jsonData = JSON.parse(rawData);
-jsonData.file_path.forEach(filePath => {
-    console.log(`File Path: ${filePath}`);
+    if (importName.startsWith("./")) {
+        importName = importName.substring(2);
+    }
+    if (importName.endsWith(".js")) {
+        importName = importName.slice(0, -3);
+    }
+    if (importName.includes("/")) {
+        importName = importName.split("/").pop();
+    }
+
+    return importName; 
+}
+
+const rawData = {
+    "file_path": [
+        {
+            "file": "script1",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script1.js"
+        },
+        {
+            "file": "script2",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script2.js"
+        },
+        {
+            "file": "script3",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script3.js"
+        },
+        {
+            "file": "script4",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\test2\\script4.js"
+        },
+        {
+            "file": "utils",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\utils.js"
+        }
+    ]
+}
+
+const files_inform = finding_getimports(rawData)
+
+// console.log("file_inform",files_inform)
+
+let file_to_check = "utils";
+
+function depSearch(file_to_check,files_inform,visited,dependencies) {
+    if (visited === undefined || visited === null) {
+    visited = new Set();
+    }
+    if (dependencies === undefined || dependencies === null) {
+    dependencies = new Set();
+    }
+    visited.add(file_to_check)
+    files_inform.forEach(file_info => {
+    if (file_info.imports.includes(file_to_check)) {
+        dependencies.add(file_info.file);
+    }
+    dependencies.forEach(imp_file=> {
+        if (!visited.has(imp_file)){
+            const new_dependencies = depSearch(imp_file, files_inform, visited);
+            new_dependencies.forEach(dep => dependencies.add(dep));
+        }
+    })
 });
+
+return dependencies
+
+}
+
+
+console.log(depSearch(file_to_check,files_inform));
+
+
+

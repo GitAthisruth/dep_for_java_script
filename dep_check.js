@@ -5,7 +5,8 @@ import {writeFileSync } from "fs";
 
 const prompt = promptSync();
 
-function depSearch(fileToCheck, importData, visited = new Set(), tupledDependencies = new Set()) {
+function depSearch(fileToCheck, importData,rawData,visited = new Set(), tupledDependencies = new Set()) {
+    console.log("importData",importData)
     visited.add(fileToCheck);
     let dependencies = new Set();
 
@@ -51,7 +52,7 @@ const fileToCheck = prompt("Enter the file name to check dependencies: ");
 
 
 if (typeof fileToCheck === "string") {
-    let [dependencies, tupledDependencies] = depSearch(fileToCheck, importData);
+    let [dependencies, tupledDependencies] = depSearch(fileToCheck, importData,rawData);
     console.log("Dependencies (List of Files):", dependencies);
     console.log("Tupled Dependencies (List of Tuples):", tupledDependencies);
 } else {
