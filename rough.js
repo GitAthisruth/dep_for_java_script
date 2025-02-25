@@ -105,7 +105,7 @@ const rawData = {
 
 const files_inform = finding_getimports(rawData)
 
-console.log("file_inform",files_inform)
+// console.log("file_inform",files_inform)
 
 let file_to_check = "utils";
 
@@ -157,6 +157,15 @@ const updatedResult = {
     },
     dependencies: dependenciesWithPaths
 };
+
+const outputFilePath = `${file_to_check}pathAddedResult.json`;  
+    const jsonDataw = JSON.stringify(updatedResult, null, 2); 
+    try {
+        writeFileSync(outputFilePath, jsonDataw , "utf8");
+        console.log("File imports saved successfully to fileImports.json");
+    } catch (error) {
+        console.error("Error saving JSON file:", error);
+    }
 
 console.log(updatedResult);
 
