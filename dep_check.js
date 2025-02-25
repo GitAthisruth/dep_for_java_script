@@ -5,52 +5,74 @@ import {writeFileSync } from "fs";
 
 const prompt = promptSync();
 
-function depSearch(file_to_check,files_inform,visited) {
+function depSearch(file_to_check,files_inform,visited,dependencies) {
     if (visited === undefined || visited === null) {
     visited = new Set();
     }
+    if (dependencies === undefined || dependencies === null) {
+    dependencies = new Set();
+    }
     visited.add(file_to_check)
     files_inform.forEach(file_info => {
-        file_to_check = file_to_check.replace(/\.py$/, "");
     if (file_info.imports.includes(file_to_check)) {
         dependencies.add(file_info.file);
     }
     dependencies.forEach(imp_file=> {
         if (!visited.has(imp_file)){
-            const new_dependencies = ff(imp_file, files_inform, visited);
+            const new_dependencies = depSearch(imp_file, files_inform, visited);
             new_dependencies.forEach(dep => dependencies.add(dep));
         }
     })
 });
-const dependenciesArray = Array.from(dependencies);
 
-const jsonData = JSON.stringify(
-    { file_to_check:fileToCheck, dependencies: dependenciesArray },
-    null,
-    4
-);
+return dependencies
 
-writeFileSync(`${fileToCheck}_dependencies.json`, jsonData, "utf-8");
-
-    return jsonData;
 }
-
-
-
-
-
 const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js"
 
 const rawData = file_path_finder(folderPath)
 
-const importData = finding_getimports(rawData);  
+console.log(rawData);
 
-const fileToCheck = prompt("Enter the file name to check dependencies: ");
+const files_inform = finding_getimports(rawData)
+
+const file_to_check = prompt("Enter the file name to check dependencies: ");
+
+const dependencies = depSearch(file_to_check,files_inform);
+
+const result = {file_to_check:file_to_check,dependencies:Array.from(dependencies)} 
+
+const getFilePath = (fileName) => {
+    const file = rawData.file_path.find(item => item.file === fileName);
+    return file ? file.filePath : null;
+};
+
+const fileToCheckPath = getFilePath(result.file_to_check);
+
+const dependenciesWithPaths = result.dependencies.map(dep => ({
+    file: dep,
+    filePath: getFilePath(dep)
+}));
+
+const updatedResult = {
+    file_to_check: {
+        name: result.file_to_check,
+        filePath: fileToCheckPath
+    },
+    dependencies: dependenciesWithPaths
+};
+
+const outputFilePath = `${file_to_check}pathAddedResult.json`;  
+    const jsonDataw = JSON.stringify(updatedResult, null, 2); 
+    try {
+        writeFileSync(outputFilePath, jsonDataw , "utf8");
+        console.log("File imports saved successfully to fileImports.json");
+    } catch (error) {
+        console.error("Error saving JSON file:", error);
+    }
+
+console.log(updatedResult);
 
 
-if (typeof fileToCheck === "string") {
-    let dependencies= depSearch(fileToCheck, importData,rawData);
-    console.log("Dependencies (List of Files):", dependencies);
-} else {
-    console.error("Invalid file name provided:", fileToCheck);
-}
+
+

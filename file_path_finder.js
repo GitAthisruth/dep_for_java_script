@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test"
+// const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test"
 
 
 export function file_path_finder(folderPath) {
@@ -24,13 +24,13 @@ export function file_path_finder(folderPath) {
 
     traverseDirectory(folderPath);
 
-    const filePathListJson = JSON.stringify({ file_path: allFilePaths }, null, 4);
+    const filePathListJson = JSON.stringify({ all_file_path: allFilePaths }, null, 4);
 
-    fs.writeFileSync("all_file_paths.json", filePathListJson, "utf-8");
+    fs.writeFileSync("all_file_paths.json",filePathListJson, "utf-8");
     return filePathListJson;
 }
 
-console.log(file_path_finder(folderPath));
+// console.log(file_path_finder(folderPath));
 
 
 

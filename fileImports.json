@@ -1,39 +1,319 @@
 [
   {
-    "file": "script1",
+    "file": "reveal.esm",
+    "imports": []
+  },
+  {
+    "file": "reveal",
+    "imports": []
+  },
+  {
+    "file": "gulpfile",
     "imports": [
       "fs",
-      "path",
-      "esprima"
+      "package.json",
+      "glob",
+      "yargs",
+      "through2",
+      "node-qunit-puppeteer",
+      "rollup",
+      "plugin-terser",
+      "plugin-commonjs",
+      "sass",
+      "gulp",
+      "gulp-zip",
+      "gulp-header-comment",
+      "gulp-eslint",
+      "gulp-clean-css",
+      "gulp-connect",
+      "gulp-autoprefixer"
     ]
   },
   {
-    "file": "script2",
+    "file": "playback",
+    "imports": []
+  },
+  {
+    "file": "config",
+    "imports": []
+  },
+  {
+    "file": "autoanimate",
     "imports": [
-      "express",
-      "express",
-      "lodash",
-      "script3"
+      "util",
+      "constants"
     ]
   },
   {
-    "file": "script3",
+    "file": "backgrounds",
     "imports": [
-      "utils",
-      "helpers"
+      "util",
+      "color"
     ]
   },
   {
-    "file": "script4",
+    "file": "controls",
     "imports": [
-      "fs",
-      "path",
-      "esprima",
-      "script2"
+      "util",
+      "device"
     ]
   },
   {
-    "file": "utils",
+    "file": "focus",
+    "imports": [
+      "util"
+    ]
+  },
+  {
+    "file": "fragments",
+    "imports": [
+      "util"
+    ]
+  },
+  {
+    "file": "jumptoslide",
+    "imports": [
+      "constants"
+    ]
+  },
+  {
+    "file": "keyboard",
+    "imports": [
+      "util"
+    ]
+  },
+  {
+    "file": "location",
+    "imports": []
+  },
+  {
+    "file": "notes",
+    "imports": []
+  },
+  {
+    "file": "overlay",
+    "imports": []
+  },
+  {
+    "file": "overview",
+    "imports": [
+      "constants",
+      "util"
+    ]
+  },
+  {
+    "file": "plugins",
+    "imports": [
+      "loader"
+    ]
+  },
+  {
+    "file": "pointer",
+    "imports": []
+  },
+  {
+    "file": "printview",
+    "imports": [
+      "constants",
+      "util"
+    ]
+  },
+  {
+    "file": "progress",
+    "imports": []
+  },
+  {
+    "file": "scrollview",
+    "imports": [
+      "constants",
+      "util"
+    ]
+  },
+  {
+    "file": "slidecontent",
+    "imports": [
+      "util",
+      "device",
+      "fitty"
+    ]
+  },
+  {
+    "file": "slidenumber",
+    "imports": [
+      "constants"
+    ]
+  },
+  {
+    "file": "touch",
+    "imports": [
+      "device",
+      "util"
+    ]
+  },
+  {
+    "file": "index",
+    "imports": [
+      "reveal"
+    ]
+  },
+  {
+    "file": "reveal",
+    "imports": [
+      "slidecontent",
+      "slidenumber",
+      "jumptoslide",
+      "backgrounds",
+      "autoanimate",
+      "scrollview",
+      "printview",
+      "fragments",
+      "overview",
+      "keyboard",
+      "location",
+      "controls",
+      "progress",
+      "pointer",
+      "plugins",
+      "overlay",
+      "touch",
+      "focus",
+      "notes",
+      "playback",
+      "config",
+      "util",
+      "device",
+      "constants"
+    ]
+  },
+  {
+    "file": "color",
+    "imports": []
+  },
+  {
+    "file": "constants",
+    "imports": []
+  },
+  {
+    "file": "device",
+    "imports": []
+  },
+  {
+    "file": "loader",
+    "imports": []
+  },
+  {
+    "file": "util",
+    "imports": []
+  },
+  {
+    "file": "highlight.esm",
+    "imports": []
+  },
+  {
+    "file": "highlight",
+    "imports": []
+  },
+  {
+    "file": "plugin",
+    "imports": [
+      "highlight"
+    ]
+  },
+  {
+    "file": "markdown.esm",
+    "imports": []
+  },
+  {
+    "file": "markdown",
+    "imports": []
+  },
+  {
+    "file": "plugin",
+    "imports": [
+      "marked"
+    ]
+  },
+  {
+    "file": "katex",
+    "imports": []
+  },
+  {
+    "file": "math.esm",
+    "imports": []
+  },
+  {
+    "file": "math",
+    "imports": []
+  },
+  {
+    "file": "mathjax2",
+    "imports": []
+  },
+  {
+    "file": "mathjax3",
+    "imports": []
+  },
+  {
+    "file": "plugin",
+    "imports": [
+      "katex",
+      "mathjax2",
+      "mathjax3"
+    ]
+  },
+  {
+    "file": "notes.esm",
+    "imports": []
+  },
+  {
+    "file": "notes",
+    "imports": []
+  },
+  {
+    "file": "plugin",
+    "imports": [
+      "speaker-view.html",
+      "marked"
+    ]
+  },
+  {
+    "file": "plugin",
+    "imports": []
+  },
+  {
+    "file": "search.esm",
+    "imports": []
+  },
+  {
+    "file": "search",
+    "imports": []
+  },
+  {
+    "file": "plugin",
+    "imports": []
+  },
+  {
+    "file": "zoom.esm",
+    "imports": []
+  },
+  {
+    "file": "zoom",
+    "imports": []
+  },
+  {
+    "file": "external-script-a",
+    "imports": []
+  },
+  {
+    "file": "external-script-b",
+    "imports": []
+  },
+  {
+    "file": "external-script-c",
+    "imports": []
+  },
+  {
+    "file": "external-script-d",
     "imports": []
   }
 ]

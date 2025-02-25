@@ -1,24 +1,228 @@
 {
-    "file_path": [
+    "all_file_path": [
         {
-            "file": "script1",
-            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script1.js"
+            "file": "reveal.esm",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\dist\\reveal.esm.js"
         },
         {
-            "file": "script2",
-            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script2.js"
+            "file": "reveal",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\dist\\reveal.js"
         },
         {
-            "file": "script3",
-            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script3.js"
+            "file": "gulpfile",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\gulpfile.js"
         },
         {
-            "file": "script4",
-            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\test2\\script4.js"
+            "file": "playback",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\components\\playback.js"
         },
         {
-            "file": "utils",
-            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\utils.js"
+            "file": "config",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\config.js"
+        },
+        {
+            "file": "autoanimate",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\autoanimate.js"
+        },
+        {
+            "file": "backgrounds",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\backgrounds.js"
+        },
+        {
+            "file": "controls",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\controls.js"
+        },
+        {
+            "file": "focus",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\focus.js"
+        },
+        {
+            "file": "fragments",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\fragments.js"
+        },
+        {
+            "file": "jumptoslide",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\jumptoslide.js"
+        },
+        {
+            "file": "keyboard",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\keyboard.js"
+        },
+        {
+            "file": "location",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\location.js"
+        },
+        {
+            "file": "notes",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\notes.js"
+        },
+        {
+            "file": "overlay",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\overlay.js"
+        },
+        {
+            "file": "overview",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\overview.js"
+        },
+        {
+            "file": "plugins",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\plugins.js"
+        },
+        {
+            "file": "pointer",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\pointer.js"
+        },
+        {
+            "file": "printview",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\printview.js"
+        },
+        {
+            "file": "progress",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\progress.js"
+        },
+        {
+            "file": "scrollview",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\scrollview.js"
+        },
+        {
+            "file": "slidecontent",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\slidecontent.js"
+        },
+        {
+            "file": "slidenumber",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\slidenumber.js"
+        },
+        {
+            "file": "touch",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\touch.js"
+        },
+        {
+            "file": "index",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\index.js"
+        },
+        {
+            "file": "reveal",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\reveal.js"
+        },
+        {
+            "file": "color",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\utils\\color.js"
+        },
+        {
+            "file": "constants",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\utils\\constants.js"
+        },
+        {
+            "file": "device",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\utils\\device.js"
+        },
+        {
+            "file": "loader",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\utils\\loader.js"
+        },
+        {
+            "file": "util",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\utils\\util.js"
+        },
+        {
+            "file": "highlight.esm",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\highlight\\highlight.esm.js"
+        },
+        {
+            "file": "highlight",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\highlight\\highlight.js"
+        },
+        {
+            "file": "plugin",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\highlight\\plugin.js"
+        },
+        {
+            "file": "markdown.esm",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\markdown\\markdown.esm.js"
+        },
+        {
+            "file": "markdown",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\markdown\\markdown.js"
+        },
+        {
+            "file": "plugin",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\markdown\\plugin.js"
+        },
+        {
+            "file": "katex",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\math\\katex.js"
+        },
+        {
+            "file": "math.esm",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\math\\math.esm.js"
+        },
+        {
+            "file": "math",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\math\\math.js"
+        },
+        {
+            "file": "mathjax2",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\math\\mathjax2.js"
+        },
+        {
+            "file": "mathjax3",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\math\\mathjax3.js"
+        },
+        {
+            "file": "plugin",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\math\\plugin.js"
+        },
+        {
+            "file": "notes.esm",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\notes\\notes.esm.js"
+        },
+        {
+            "file": "notes",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\notes\\notes.js"
+        },
+        {
+            "file": "plugin",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\notes\\plugin.js"
+        },
+        {
+            "file": "plugin",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\search\\plugin.js"
+        },
+        {
+            "file": "search.esm",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\search\\search.esm.js"
+        },
+        {
+            "file": "search",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\search\\search.js"
+        },
+        {
+            "file": "plugin",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\zoom\\plugin.js"
+        },
+        {
+            "file": "zoom.esm",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\zoom\\zoom.esm.js"
+        },
+        {
+            "file": "zoom",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\plugin\\zoom\\zoom.js"
+        },
+        {
+            "file": "external-script-a",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\test\\assets\\external-script-a.js"
+        },
+        {
+            "file": "external-script-b",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\test\\assets\\external-script-b.js"
+        },
+        {
+            "file": "external-script-c",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\test\\assets\\external-script-c.js"
+        },
+        {
+            "file": "external-script-d",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\test\\assets\\external-script-d.js"
         }
     ]
 }

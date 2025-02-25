@@ -1,0 +1,58 @@
+{
+  "file_to_check": "util",
+  "file_to_check_path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\utils\\util.js",
+  "dependencies": [
+    {
+      "file": "autoanimate",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\autoanimate.js"
+    },
+    {
+      "file": "backgrounds",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\backgrounds.js"
+    },
+    {
+      "file": "controls",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\controls.js"
+    },
+    {
+      "file": "focus",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\focus.js"
+    },
+    {
+      "file": "fragments",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\fragments.js"
+    },
+    {
+      "file": "keyboard",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\keyboard.js"
+    },
+    {
+      "file": "overview",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\overview.js"
+    },
+    {
+      "file": "printview",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\printview.js"
+    },
+    {
+      "file": "scrollview",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\scrollview.js"
+    },
+    {
+      "file": "slidecontent",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\slidecontent.js"
+    },
+    {
+      "file": "touch",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\controllers\\touch.js"
+    },
+    {
+      "file": "reveal",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\dist\\reveal.js"
+    },
+    {
+      "file": "index",
+      "path": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js\\js\\index.js"
+    }
+  ]
+}

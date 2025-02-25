@@ -4,14 +4,14 @@ import { parseModule, parseScript } from "meriyah";
 
 export function finding_getimports(rawData) {
     const jsonData = typeof rawData === 'string' ? JSON.parse(rawData) : rawData;
-    console.log(`jsonData: ${jsonData}`)
+    // console.log(`jsonData: ${jsonData}`)
     let fileImports = [];
     let all_files = [];
 
     jsonData.file_path.forEach(file_names => {
         if (file_names && file_names.filePath && file_names.filePath.endsWith(".js")) {
             const fileContent = readFileSync(file_names.filePath, "utf-8");
-            console.log("file.filePath:", file_names.filePath);
+            // console.log("file.filePath:", file_names.filePath);
 
             const fileName = basename(file_names.file, ".js");
             all_files.push(fileName);
