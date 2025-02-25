@@ -109,14 +109,7 @@ function cleanImportName(importName) {
 const folderPath = "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test2\\reveal.js";
 
 const rawData = file_path_finder(folderPath);
-
-// console.log(`rawData:${rawData}`);
-// console.log(typeof rawData);
-
 const files_inform = finding_getimports(rawData);
-
-// console.log("file_inform", files_inform);
-
 function depSearch(file_to_check, files_inform, visited = new Set(), dependencies = new Set()) {
     visited.add(file_to_check);
     files_inform.forEach(file_info => {
@@ -138,11 +131,9 @@ const file_to_check = prompt("Enter the file name to check dependencies: ");
 
 const dependencies = depSearch(file_to_check, files_inform);
 
-const result = { file_to_check: file_to_check, dependencies: Array.from(dependencies) };
-
 let parsedData;
 try {
-    parsedData = JSON.parse(rawData);  // Parse string to object
+    parsedData = JSON.parse(rawData);  
 } catch (error) {
     console.error("Error parsing rawData:", error);
 }

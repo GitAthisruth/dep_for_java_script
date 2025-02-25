@@ -8,7 +8,7 @@ export function finding_getimports(rawData) {
     let fileImports = [];
     let all_files = [];
 
-    jsonData.file_path.forEach(file_names => {
+    jsonData.all_file_path.forEach(file_names => {
         if (file_names && file_names.filePath && file_names.filePath.endsWith(".js")) {
             const fileContent = readFileSync(file_names.filePath, "utf-8");
             // console.log("file.filePath:", file_names.filePath);
