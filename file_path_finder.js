@@ -30,7 +30,7 @@ export function file_path_finder(folderPath) {
     return filePathListJson;
 }
 
-// console.log(file_path_finder(folderPath));
+console.log(file_path_finder(folderPath));
 
 
 

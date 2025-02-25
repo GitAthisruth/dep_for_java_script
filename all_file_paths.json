@@ -1,9 +1,24 @@
 {
     "file_path": [
-        "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script1.js",
-        "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script2.js",
-        "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script3.js",
-        "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\test2\\script4.js",
-        "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\utils.js"
+        {
+            "file": "script1",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script1.js"
+        },
+        {
+            "file": "script2",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script2.js"
+        },
+        {
+            "file": "script3",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\script3.js"
+        },
+        {
+            "file": "script4",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\test2\\script4.js"
+        },
+        {
+            "file": "utils",
+            "filePath": "C:\\Users\\LENOVO\\Desktop\\JSAPP\\dep_for_java_script\\test\\utils.js"
+        }
     ]
 }

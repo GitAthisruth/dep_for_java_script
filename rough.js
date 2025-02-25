@@ -4,14 +4,14 @@ import { parseModule, parseScript } from "meriyah";
 
 export function finding_getimports(rawData) {
     const jsonData = typeof rawData === 'string' ? JSON.parse(rawData) : rawData;
-    console.log(`jsonData: ${jsonData}`)
+    // console.log(`jsonData: ${jsonData}`)
     let fileImports = [];
     let all_files = [];
 
     jsonData.file_path.forEach(file_names => {
         if (file_names && file_names.filePath && file_names.filePath.endsWith(".js")) {
             const fileContent = readFileSync(file_names.filePath, "utf-8");
-            console.log("file.filePath:", file_names.filePath);
+            // console.log("file.filePath:", file_names.filePath);
 
             const fileName = basename(file_names.file, ".js");
             all_files.push(fileName);
@@ -105,7 +105,7 @@ const rawData = {
 
 const files_inform = finding_getimports(rawData)
 
-// console.log("file_inform",files_inform)
+console.log("file_inform",files_inform)
 
 let file_to_check = "utils";
 
@@ -134,7 +134,30 @@ return dependencies
 }
 
 
-console.log(depSearch(file_to_check,files_inform));
+const dependencies = depSearch(file_to_check,files_inform);
 
+const result = {file_to_check:file_to_check,dependencies:Array.from(dependencies)} 
+
+const getFilePath = (fileName) => {
+    const file = rawData.file_path.find(item => item.file === fileName);
+    return file ? file.filePath : null;
+};
+
+const fileToCheckPath = getFilePath(result.file_to_check);
+
+const dependenciesWithPaths = result.dependencies.map(dep => ({
+    file: dep,
+    filePath: getFilePath(dep)
+}));
+
+const updatedResult = {
+    file_to_check: {
+        name: result.file_to_check,
+        filePath: fileToCheckPath
+    },
+    dependencies: dependenciesWithPaths
+};
+
+console.log(updatedResult);
 
 
